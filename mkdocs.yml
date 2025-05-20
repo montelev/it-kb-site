@@ -6,3 +6,5 @@ nav:
       - Reset Forgotten Password: windows/reset-password.md
   - Browser Issues:
       - Clear Browser Cache: browser/clear-browser-cache.md
+  - PowerShell Scripts:
+      - Install Software via PowerShell: powershell/install-software.md

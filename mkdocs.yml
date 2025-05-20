@@ -1,4 +1,6 @@
 site_name: IT Support Knowledge Base
+theme:
+  name: material
 
 nav:
   - Home: index.md

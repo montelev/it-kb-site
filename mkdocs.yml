@@ -1,0 +1,8 @@
+site_name: IT Support Knowledge Base
+
+nav:
+  - Home: index.md
+  - Windows Issues:
+      - Reset Forgotten Password: windows/reset-password.md
+  - Browser Issues:
+      - Clear Browser Cache: browser/clear-browser-cache.md

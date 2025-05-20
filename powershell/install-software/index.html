@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Clear Browser Cache - IT Support Knowledge Base</title>
+        <title>Install Software via PowerShell - IT Support Knowledge Base</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/fontawesome.min.css" rel="stylesheet">
         <link href="../../css/brands.min.css" rel="stylesheet">
@@ -47,20 +47,20 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Browser Issues</a>
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Browser Issues</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active" aria-current="page">Clear Browser Cache</a>
+    <a href="../../browser/clear-browser-cache/" class="dropdown-item">Clear Browser Cache</a>
 </li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PowerShell Scripts</a>
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">PowerShell Scripts</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../powershell/install-software/" class="dropdown-item">Install Software via PowerShell</a>
+    <a href="./" class="dropdown-item active" aria-current="page">Install Software via PowerShell</a>
 </li>
                                 </ul>
                             </li>
@@ -73,12 +73,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../windows/reset-password/" class="nav-link">
+                                <a rel="prev" href="../../browser/clear-browser-cache/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../powershell/install-software/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -100,8 +100,12 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#how-to-clear-your-browser-cache" class="nav-link">🧹 How to Clear Your Browser Cache</a>
+            <li class="nav-item" data-bs-level="1"><a href="#install-software-via-powershell" class="nav-link">🖥️ Install Software via PowerShell</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#method-1-using-winget-built-in-for-windows-1011" class="nav-link">🚀 Method 1: Using Winget (Built-in for Windows 10/11)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -109,38 +113,34 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="how-to-clear-your-browser-cache">🧹 How to Clear Your Browser Cache</h1>
-<p>Over time, your browser stores data (images, scripts, etc.) to load websites faster. This can cause problems when trying to view updated content or fix login issues.</p>
-<p>Here’s how to clear cache in major browsers:</p>
+<h1 id="install-software-via-powershell">🖥️ Install Software via PowerShell</h1>
+<p>PowerShell can automate the installation of common software using package managers like <strong>Winget</strong> or <strong>Chocolatey</strong>.</p>
 <hr />
-<h3 id="google-chrome">🌐 Google Chrome</h3>
-<ol>
-<li>Open Chrome.</li>
-<li>Press <code>Ctrl + Shift + Delete</code> or go to <code>chrome://settings/clearBrowserData</code></li>
-<li>Set <strong>Time Range</strong> to <code>All time</code>.</li>
-<li>Check <strong>Cached images and files</strong>.</li>
-<li>Click <strong>Clear data</strong>.</li>
-</ol>
-<hr />
-<h3 id="mozilla-firefox">🦊 Mozilla Firefox</h3>
-<ol>
-<li>Open Firefox.</li>
-<li>Press <code>Ctrl + Shift + Delete</code> or go to <code>about:preferences#privacy</code></li>
-<li>Click <strong>Clear Data</strong> under <strong>Cookies and Site Data</strong>.</li>
-<li>Check <strong>Cached Web Content</strong>.</li>
-<li>Click <strong>Clear</strong>.</li>
-</ol>
-<hr />
-<h3 id="microsoft-edge">🧿 Microsoft Edge</h3>
-<ol>
-<li>Open Edge.</li>
-<li>Press <code>Ctrl + Shift + Delete</code> or go to <code>edge://settings/clearBrowserData</code></li>
-<li>Choose <strong>All time</strong> for the time range.</li>
-<li>Select <strong>Cached images and files</strong>.</li>
-<li>Click <strong>Clear now</strong>.</li>
-</ol>
-<hr />
-<p>💡 Tip: Clearing the cache <strong>does not delete passwords or browsing history</strong>, unless selected.</p></div>
+<h2 id="method-1-using-winget-built-in-for-windows-1011">🚀 Method 1: Using Winget (Built-in for Windows 10/11)</h2>
+<h3 id="example-install-google-chrome">✅ Example: Install Google Chrome</h3>
+<pre><code class="language-powershell">winget install --id=Google.Chrome --source=winget
+
+----------------------------Common apps---------------------------
+VS Code             winget install --id=Microsoft.VisualStudioCode
+Zoom                winget install --id=Zoom.Zoom
+7-Zip               winget install --id=7zip.7zip
+Firefox             winget install --id=Mozilla.Firefox
+VLC Media Player    winget install --id=VideoLAN.VLC
+--------------------------------------------------------------------
+## 📦 Method 2: Using Chocolatey (Requires Installation)
+``` 🛠️ Install Chocolatey (Run in Admin PowerShell)
+    &quot;Set-ExecutionPolicy Bypass -Scope Process -Force; `
+    [System.Net.ServicePointManager]::SecurityProtocol = `
+    [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; `
+    iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))&quot;
+### ✅ Example: Install Notepad++ with Chocolatey
+ (Powersehell)
+ &quot;choco install notepadplusplus -y&quot;
+
+⚠️ Note:
+-Winget comes with most Windows 10/11 systems.
+-Chocolatey needs admin access and initial setup.
+</code></pre></div>
             </div>
         </div>
 
